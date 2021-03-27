@@ -1,0 +1,176 @@
+/*this is for people who like it in the dark
+body {
+	color:white;
+	background-color:black;
+}*/
+
+body{margin:0px;}
+
+/*This CSS is provided just to cut down on questions about stuff I do not care about by giving it to you.*/
+section{
+	margin-bottom: 1em;
+}
+
+section div { /* all SECTION's direct children who are DIV tags  */
+	margin: 3em;
+	padding: 15px;
+	border: green solid 2px;
+	background-color: gray;
+	width: 12em;
+	text-align: center;
+}
+
+section.timing_compare > div {/* all SECTION tags with the class "timing_compare" and who's direct children are DIV  */
+	padding-left: 0px; padding-right: 0px; /* this helps with the look of these; notice the text forces text to overflow when the box is too narrow */
+	margin: 1px;
+	width: 10%;
+	width: calc( 10% - 4px );
+	overflow: hidden;
+	animation-duration: 4s;
+	animation-name: slidein;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes slidein {
+
+	from {
+		margin-left: 0px;
+	}
+
+	0% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+	90% {
+		opacity: 0.9;
+		margin-left: 900px
+	}
+	to {
+		margin-left: 900px;
+	}
+}
+
+section.timing_compare > div.Step{
+	animation-name: slidein;
+	animation-timing-function: steps(10, end);
+}
+
+section.timing_compare > div.Custom{
+	animation-name: slidein;
+	animation-timing-function: cubic-bezier(1,0,0,1);
+}
+
+section.timing_compare > div.EaseInOut{
+	animation-name: slidein;
+	animation-timing-function: ease-in-out;
+}
+
+section.timing_compare > div.EaseOut{
+	animation-name: slidein;
+	animation-timing-function: ease-out;
+}
+
+section.timing_compare > div.EaseIn{
+	animation-name: slidein;
+	animation-timing-function: ease-in;
+}
+
+section.timing_compare > div.Linear{
+	animation-name: slidein;
+	animation-timing-function: linear;
+}
+section.timing_compare > div.Default{
+	animation-name: slidein;
+}
+
+.rotate{
+	animation-name: rotate;
+	animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate{
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.zoom{
+	animation-name: zoom;
+	animation: zoom 2s infinite alternate;
+}
+
+@keyframes zoom {
+	0% {transform: scale(.8);}
+	100% {transform: scale (1.2);}
+}
+
+.seesaw {
+	animation-name: seesaw;
+	animation: seesaw 1.5s infinite alternate;
+}
+
+@keyframes seesaw {
+	0% {transform: rotate(-10deg);}
+	100% {transform: rotate(10deg);}
+
+}
+
+.DDD{
+	animation-name: DDD;
+	animation: DDD 5.5s infinite;
+}
+
+@keyframes DDD{
+	0%{transform:perspective(6.5cm) rotateY(0deg);}
+	100%{transform: perspective(6.5cm) rotateY(360deg);}
+}
+
+.FUN{
+	animation-name: FUN;
+	animation: FUN 3.5s infinite;
+	background-color: aqua
+}
+
+@keyframes FUN{
+	0%{transform: perspective(6.5cm) rotateY(0deg);}
+	100%{transform: perspective(13.5cm) rotateY(360deg);}
+}
+
+.transition1{
+	transition: transform 2s;
+}
+
+.transition:hover{
+	transform: scale(1.2);
+}
+
+.transition2{
+	transition: transform 2.5s;
+	transition: transform .3s;
+}
+.transition2:hover{
+	transform: scale(1.9);
+	transform: scale(1.2);
+}
+
+button {
+	font-size: 14em;
+	margin-bottom: 2em;
+}
+
+.combo_deal{
+	border: 1px dotted black;
+	text-align:center;
+}
+
+.combo_deal div:hover{
+	transform: rotate(-90deg);
+}
+.combo_deal div {
+	margin:2px;	
+	padding:2px;
+	display:inline-block;
+	transition: transform 1s;
+}
+/****************************************************************************/
+
